@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roll and Pitch Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Roll and Pitch Display</h1>
+        <div>
+            <p><strong>Roll:</strong> <span id="rollValue">--</span></p>
+            <p><strong>Pitch:</strong> <span id="pitchValue">--</span></p>
+        </div>
+    </div>
+    <script>
+        function updateValues(roll, pitch) {
+            document.getElementById("rollValue").textContent = roll.toFixed(2);
+            document.getElementById("pitchValue").textContent = pitch.toFixed(2);
+        }
+
+        // Replace these values with actual data received from ESP8266
+        var receivedRoll = 10.45;
+        var receivedPitch = -5.67;
+
+        updateValues(receivedRoll, receivedPitch);
+    </script>
+</body>
+</html>
